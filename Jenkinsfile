@@ -39,7 +39,7 @@
       def uploadSpec = """{
        "files": [
         {
-         "pattern": "monolith/*.war",
+         "pattern": "*.war",
          "target": "monolith"
         }
         ]
