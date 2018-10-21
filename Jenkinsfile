@@ -32,12 +32,28 @@
       //sh "${mvn} test"
       sh "sleep 5"
     }
-
+  
+   stage('Artifact Mgmt')  {
+  
+      def arti = Artifactory.server('jfrog')
+      def uploadSpec = """{
+       "files": [
+        {
+         "pattern": "monolith/*.war",
+         "target": "monolith"
+        }
+        ]
+      }"""
+     server.upload(uploadSpec)
+    
+    
+     }
+    
     // stage('Publish to Nexus') {
      //   sh "mvn -s mvn-settings.xml deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::${params.NEXUS_REPO_URL}"
   //  }
      
  }    
 
-   
+
     
