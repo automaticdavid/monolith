@@ -33,7 +33,7 @@
       sh "sleep 5"
     }
   
-   stage('Artifact Mgmt')  {
+   stage('Publish Artifact')  {
   
       def jfrog = Artifactory.server('jfrog')
       def uploadSpec = """{
@@ -47,12 +47,24 @@
      def buildinfo = jfrog.upload uploadSpec
      jfrog.publishBuildInfo buildinfo
     
-    
      }
-    
-    // stage('Publish to Nexus') {
-     //   sh "mvn -s mvn-settings.xml deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::${params.NEXUS_REPO_URL}"
-  //  }
+  
+    stage('Deploy') {
+
+        ansibleTower(
+            towerServer: 'tower',
+            templateType: 'job',
+            jobTemplate: 'rhforum-aws-eap',
+            importTowerLogs: true,
+            removeColor: false,
+            verbose: true,
+            extraVars: '''---
+scope: "*eap*"
+version: "1.1.0"
+jboss_eap_ha: true
+     '''
+        )
+    }
      
  }    
 
