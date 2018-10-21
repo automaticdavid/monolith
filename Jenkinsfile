@@ -4,7 +4,8 @@
  
     stage ("Get Source code"){
         echo '*** Build starting ***'
-        def mvn = "mvn -s mvn-settings.xml"
+        def mvnHome = tool 'maven'
+        // def mvn = "mvn -s mvn-settings.xml"
         sh "mvn --version"
         git url : 'https://github.com/automaticdavid/monolith/' 
     }
