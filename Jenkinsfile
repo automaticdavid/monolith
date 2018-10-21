@@ -1,6 +1,6 @@
 #!groovy
 
-node('Jenkins') {
+node('maven') {
 
     stage ("Get Source code"){
         echo '*** Build starting ***'
