@@ -1,12 +1,5 @@
-pipeline  { 
-
- agent any 
+#!groovy
  
- tools { 
-      maven 'maven' 
-      jdk 'jdk' 
- }
-
  stages { 
  
     stage ("Get Source code"){
