@@ -44,7 +44,8 @@
         }
         ]
       }"""
-     jfrog.upload(uploadSpec)
+     def buildinfo = jfrog.upload uploadSpec
+     jfrog.publishBuildInfo buildinfo
     
     
      }
