@@ -1,12 +1,13 @@
-#!groovy
+pipeline  { 
 
-node('maven') {
+ tools { 
+      maven 'maven' 
+      jdk 'jdk' 
+ }
+
+
+ node('maven') {
     
-   tools { 
-        maven 'maven' 
-        jdk 'jdk' 
-    }
-
     stage ("Get Source code"){
         echo '*** Build starting ***'
         def mvn = "mvn -s mvn-settings.xml"
@@ -35,6 +36,8 @@ node('maven') {
     // stage('Publish to Nexus') {
      //   sh "mvn -s mvn-settings.xml deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::${params.NEXUS_REPO_URL}"
   //  }
+     
+ }    
 
- }         
+}    
     
