@@ -1,13 +1,14 @@
 pipeline  { 
 
+ agent any 
+ 
  tools { 
       maven 'maven' 
       jdk 'jdk' 
  }
 
-
- node('maven') {
-    
+ stages { 
+ 
     stage ("Get Source code"){
         echo '*** Build starting ***'
         def mvn = "mvn -s mvn-settings.xml"
