@@ -44,7 +44,7 @@
         }
         ]
       }"""
-     server.upload(uploadSpec)
+     jfrog.upload(uploadSpec)
     
     
      }
