@@ -1,11 +1,12 @@
 #!groovy
- 
+
  node('maven') { 
- 
+
+    def mvn_version = 'maven'
+
     stage ("Get Source code"){
         echo '*** Build starting ***'
         // def mvn = "mvn -s mvn-settings.xml"
-       def mvn_version = 'maven'
        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
         sh "mvn --version"
        }   
