@@ -35,7 +35,7 @@
   
    stage('Artifact Mgmt')  {
   
-      def arti = Artifactory.server('jfrog')
+      def jfrog = Artifactory.server('jfrog')
       def uploadSpec = """{
        "files": [
         {
