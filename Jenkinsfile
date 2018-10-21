@@ -23,7 +23,7 @@
     // Using Mav build the war file
     stage('Build war file') {
       withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-        sh "mvn -s mvn-settings.xml clean install -DskipTests=true"
+        sh "mvn clean install -DskipTests=true"
         }         
     }         
     
