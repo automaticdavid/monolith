@@ -1,6 +1,11 @@
 #!groovy
 
 node('maven') {
+    
+   tools { 
+        maven 'maven' 
+        jdk 'jdk' 
+    }
 
     stage ("Get Source code"){
         echo '*** Build starting ***'
