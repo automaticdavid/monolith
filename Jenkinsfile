@@ -21,7 +21,9 @@
 
     // Using Mav build the war file
     stage('Build war file') {
+      withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
         sh "mvn -s mvn-settings.xml clean install -DskipTests=true"
+        }         
     }         
     
     // Using Maven run the unit tests
