@@ -45,7 +45,7 @@
         ]
       }"""
      def buildInfo = jfrog.upload uploadSpec
-     buildInfo.name = 'monolith'
+     buildInfo.name = 'monolith_2'
      buildInfo.number = env.BUILD_ID
      jfrog.publishBuildInfo buildInfo
     
