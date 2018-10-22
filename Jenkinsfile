@@ -44,9 +44,10 @@
         }
         ]
       }"""
-     def buildInfo = jfrog.upload uploadSpec
-     buildInfo.name = 'monolith_2'
+     def buildInfo = Artifactory.newBuildInfo()
+     buildInfo.name = 'monolith'
      buildInfo.number = env.BUILD_ID
+     jfrog.upload spec: uploadSpec, buildInfo: buildInfo
      jfrog.publishBuildInfo buildInfo
     
      }
