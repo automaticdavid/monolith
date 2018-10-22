@@ -46,7 +46,7 @@
       }"""
      def buildInfo = Artifactory.newBuildInfo()
      buildInfo.name = 'monolith'
-     buildInfo.number = env.BUILD_ID
+     buildInfo.number = 'build-' + env.BUILD_ID
      jfrog.upload spec: uploadSpec, buildInfo: buildInfo
      jfrog.publishBuildInfo buildInfo
     
