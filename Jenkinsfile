@@ -64,7 +64,6 @@
             extraVars: '''---
 scope: "*eap*"
 version: "1.1.0"
-jboss_eap_ha: "false"
      '''
         )
     }
