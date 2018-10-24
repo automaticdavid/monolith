@@ -57,7 +57,7 @@
         ansibleTower(
             towerServer: 'tower',
             templateType: 'job',
-            jobTemplate: 'rhforum-aws-eap',
+            jobTemplate: 'dcl-aws-cicd-eap',
             importTowerLogs: true,
             removeColor: false,
             verbose: true,
