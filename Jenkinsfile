@@ -52,7 +52,7 @@
     
      }
   
-    stage('Deploy') {
+    stage('Infra & Deploy') {
 
         ansibleTower(
             towerServer: 'tower',
