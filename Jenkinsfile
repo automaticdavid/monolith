@@ -1,6 +1,6 @@
 #!groovy
 
- node('maven') { 
+ node('jenkins') { 
 
     def mvn_version = 'maven'
 
